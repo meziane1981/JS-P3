@@ -191,4 +191,24 @@ arrayNumber.push(17);
 
 // document.body.innerHTML = arrayNumber
 //   .map((number) => `<li>${number}</li>`)
+//   .join(""); en fait ca pour disparaite les point vergule ";"
+
+
+//-----------------
+// Méthodes Objects
+//-----------------
+// document.body.innerHTML = data
+//.filter((user) => user.admin === false)
+//   .filter((user) => user.pseudo.includes("a"))
+//   .sort((a, b) => b.age - a.age)
+//   .map(
+//     (user) =>
+//       `
+//     <div class="user-card">
+//       <h2>${user.pseudo}</h2>
+//       <p>Age : ${user.age} ans</p>
+//       <p>Status : ${user.admin ? "Modérateur" : "Membre"}</p>
+//     </div>
+//   `
+//   )
 //   .join("");
