@@ -212,3 +212,92 @@ arrayNumber.push(17);
 //   `
 //   )
 //   .join("");
+//----------
+// Les dates
+//----------
+
+// Date classique
+let date = new Date();
+
+// Timestamp
+let timestamp = Date.parse(date);
+// console.log(timestamp);
+
+// IsoString
+let iso = date.toISOString();
+
+function dateParser(chaine) {
+    let newDate = new Date(chaine).toLocaleDateString("fr-FR", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        // hour: "numeric",
+        // minute: "numeric",
+    });
+    return newDate;
+}
+
+// console.log(dateParser(date));
+// console.log(dateParser(timestamp));
+// console.log(dateParser(iso));
+
+
+//--------------
+// Destructuring
+//--------------
+
+let moreData = {
+    destVar: ["Element 1", "Element 2"],
+};
+
+const { destVar } = moreData;
+
+// console.log(moreData.destVar);
+// console.log(destVar);
+
+let array5 = [70, 80, 90];
+let [x, y, z] = array5;
+// console.log(x);
+// console.log(y);
+// console.log(z);
+
+const dateDestructuring = (chaine) => {
+    let newDate = chaine.split("T")[0];
+    let [y, m, d] = newDate.split("-");
+    return [d, m, y].join("/");
+};
+// console.log(dateDestructuring(iso));
+
+//-------------
+// Les Datasets
+//-------------
+
+const h3js = document.getElementById("javascript");
+// console.log(h3js.dataset.lang);
+
+const h3 = document.querySelectorAll("h3");
+// h3.forEach((language) => console.log(language.dataset.lang));
+
+//----------
+// Les Regex
+//----------
+let mail = "from_s$cratch33@gmail.com";
+// console.log(mail.search(/frscceeceom/));
+
+// console.log(mail.replace(/from/, "de"));
+// console.log(mail.match(/SCratch/i));
+// console.log(mail.match(/[zug]/));
+// console.log(mail.match(/[12]/));
+
+// Tous les chiffres
+// console.log(mail.match(/\d/));
+
+// Matcher toutes les lettres
+// console.log(mail.match(/[a-z]/));
+
+// console.log(mail.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i)); controle un email
+
+let separator = 265264849;
+// console.log(separator.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+
+https: //cheatography.com/davechild/cheat-sheets/regular-expressions/
